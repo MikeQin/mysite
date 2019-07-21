@@ -25,14 +25,21 @@ npm install babel-plugin-import
 }
 ```
 
-### Add: Then create a `config-overrides.js` at root directory of your project for further overriding.
+### Create a `config-overrides.js` at root directory of your project for further overriding.
 
 ```
-module.exports = function override(config, env) {
-  // do stuff with the webpack config...
-  return config;
-};
+const { override, fixBabelImports } = require('customize-cra');
+
+module.exports = override(
+  fixBabelImports('import', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',
+    style: 'css',
+  }),
+);
 ```
+
+# Auto-Generated Info (Below)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
