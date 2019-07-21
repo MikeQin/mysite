@@ -1,3 +1,39 @@
+# My Site
+
+A React App template uses Ant Design.
+
+### Install
+```
+npm install antd
+
+npm install react-app-rewired customize-cra
+
+npm install babel-plugin-import
+```
+
+### Modify `package.json`
+
+```
+/* package.json */
+"scripts": {
+-   "start": "react-scripts start",
++   "start": "react-app-rewired start",
+-   "build": "react-scripts build",
++   "build": "react-app-rewired build",
+-   "test": "react-scripts test",
++   "test": "react-app-rewired test",
+}
+```
+
+### Add: Then create a `config-overrides.js` at root directory of your project for further overriding.
+
+```
+module.exports = function override(config, env) {
+  // do stuff with the webpack config...
+  return config;
+};
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
